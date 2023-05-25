@@ -15,6 +15,7 @@
   background: #FFFFFF;
   height: 73px;
   width: 538px;
+  max-width: 100%;
   left: 30vw;
   top: 35px;
   display: flex;
@@ -268,16 +269,101 @@
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1030px) {
   .heroSection {
     overflow: hidden;
   }
 
-  .product-category {
+  .products-categories {
     margin-top: 20px;
   }
 
   .main {
     margin-top: 20px;
+  }
+
+  .searchBar {
+    width: 400px;
+  }
+
+  .other-images {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .searchBar {
+    left: 20%;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .other-images {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+  .heroSection {
+    height: 180px;
+  }
+
+  .products-categories {
+    display: none;
+  }
+
+  .banner {
+    display: none;
+  }
+
+  .category p {
+    display: none;
+  }
+
+  .searchBar {
+    width: 368px;
+    height: 67px;
+    left: 20px;
+  }
+
+  .card .product-img {
+    width: 170px;
+    height: 137px;
+  }
+
+  .card {
+    height: 221px;
+    width: 170px;
+  }
+
+  .card.selected {
+    transform: scale(1.1);
+  }
+
+  .card .add-btn {
+    transform: scale(0.6);
+    margin-top: 3px;
+  }
+
+  .card .product-name {
+    font-size: 13px;
+  }
+
+  .card .product-price {
+    font-size: 10px;
+  }
+
+  .products {
+    width: initial;
+  }
+
+}
+
+@media screen and (max-width: 380px) {
+  .searchBar {
+    transform: scale(0.9);
+    left: 10px;
   }
 }
