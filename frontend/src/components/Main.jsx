@@ -99,7 +99,7 @@ const Main = () => {
                 key={product.id}
                 onClick={() => handleClick(product.id)}
               >
-                <img src={product.img} alt="" className="product-img" />
+                <img src={product.imageLink} alt="" className="product-img" />
                 <div className="product-details">
                   <h5 className="product-name">{product.name}</h5>
                   <p className="product-price">${product.price}</p>
