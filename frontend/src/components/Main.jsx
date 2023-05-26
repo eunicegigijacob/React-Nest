@@ -17,7 +17,8 @@ const Main = () => {
         const data = response.data;
         setProducts(data);
         setIsLoading(false);
-        console.log(isLoading, data);
+        console.log(isLoading, response);
+        console.log(url);
       } catch (error) {
         console.log(error.message);
       }
