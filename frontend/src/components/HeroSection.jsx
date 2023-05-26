@@ -5,10 +5,6 @@ const HeroSection = () => {
       name: 'Converse Shoes',
     },
     {
-      id: 2,
-      name: 'Men Shoes',
-    },
-    {
       id: 3,
       name: 'Sneakers',
     },
