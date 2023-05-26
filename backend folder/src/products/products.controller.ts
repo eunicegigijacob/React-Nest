@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  BadRequestException,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -16,13 +17,24 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Post()
-  create(@Body() createProductDto: CreateProductDto) {
-    return this.productsService.create(createProductDto);
+  async create(@Body() createProductDto: CreateProductDto) {
+    const { name, imageLink, price } = createProductDto;
+
+    if (!name && !imageLink && !price) {
+      return new BadRequestException('request body cannot be empty');
+    }
+
+    if (!name || !imageLink || !price) {
+      return new BadRequestException(
+        'please make sure all details are complete',
+      );
+    }
+    return await this.productsService.addProduct(createProductDto);
   }
 
   @Get()
-  findAll() {
-    return this.productsService.findAll();
+  getAll() {
+    return this.productsService.findAllProducts();
   }
 
   @Get(':id')
