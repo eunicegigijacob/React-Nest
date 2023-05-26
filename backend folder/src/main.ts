@@ -11,6 +11,8 @@ async function bootstrap() {
       callback(null, true);
     },
   });
-  await app.listen(3000);
+  await app.listen(3000, () => {
+    console.log(`app listening on port 3000`);
+  });
 }
 bootstrap();
